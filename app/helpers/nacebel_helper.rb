@@ -1,0 +1,2 @@
+module NacebelHelper
+end

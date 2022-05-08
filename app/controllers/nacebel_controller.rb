@@ -1,0 +1,3 @@
+class NacebelController < ApplicationController
+
+end
