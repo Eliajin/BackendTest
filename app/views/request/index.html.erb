@@ -1,0 +1,21 @@
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">AnnualRevenue</th>
+      <th scope="col">EnterpriseNumber</th>
+      <th scope="col">LegalName</th>
+      <th scope="col">NaturalPerso</th>
+      <th scope="col">nacebelCodes</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @requests.each do |request| %>
+    <tr>
+      <%= render request %>
+      <td><%= button_to 'Delete', request, method: :delete, class:"btn btn-outline-danger btn-sm" %>
+            <%= button_to 'Show', request, method: :get, class:"btn btn-secondary" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

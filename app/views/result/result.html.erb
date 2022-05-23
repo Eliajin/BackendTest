@@ -1,2 +1,21 @@
-<h1>Result#result</h1>
-<p>Find me in app/views/result/result.html.erb</p>
+<h1>Votre liste de simulation</h1>
+
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">AnnualRevenue</th>
+      <th scope="col">Enterprise number</th>
+      <th scope="col">LegalName</th>
+      <th scope="col">natural person</th>
+      <th scope="col">NacebelCodes</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @request.each do |req| %>
+    <tr>
+      <%= render req %>
+      <td><%= button_to 'Delete', req, method: :delete, class:"btn btn-outline-danger btn-sm" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

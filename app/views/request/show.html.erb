@@ -1,46 +1,11 @@
-Merci de remplir ses informations pour pouvoir recevoir votre offre personnalisée d'assurance !
-<%= form_with model: @request do |form| %>
-  <div class="form-group">
-    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
-  </div>
-  <br/>
-  <div class="form-group">
-    <%= form.text_field :phonenumber, class:"form-control", placeholder:"phonenumber" %>
-  </div>
-  <br/>
-  <div class="form-group">
-    <%= form.text_field :name, class:"form-control", placeholder:"name" %>
-  </div>
-  <br/>
-  <div class="form-group">
-    <%= form.text_field :surname, class:"form-control", placeholder:"surname" %>
-  </div>
-  <br/> 
-  <div class="form-group">
-    <%= form.text_field :Address, class:"form-control", placeholder:"Address" %>
-  </div>
-  <br/>
-  <p>Info pour votre assurance</p>
-  <br/>
-   <div class="form-group">
-    <%= form.text_field :annualRevenue, class:"form-control", placeholder:"annualRevenue" %>
-  </div>
-  <br/>
-   <div class="form-group">
-    <%= form.text_field :enterpriseNumber, class:"form-control", placeholder:"enterpriseNumber" %>
-  </div>
-  <br/>
-  <div class="form-group">
-    <%= form.text_field :legalName, class:"form-control", placeholder:"legalName" %>
-  </div>
-  <br/>
-  <div class="form-group">
-  <!-- <%= form.check_box :naturalPerson, class:"form-control" %>-->
-    <%= form.check_box :naturalPerson %>
-    <%= form.label :naturalPerson, "naturalPerson" %>
-  </div>
-  <br/>
-  <div>
-    <%= form.submit class:"btn btn-secondary" %>
-  </div>
-<% end %>
+Revenue annuel : <%= @request.annualRevenue %><br/>
+Numéro entreprise : <%= @request.enterpriseNumber %><br/>
+nom légal : <%= @request.legalName %><br/>
+natural person : <%= @request.naturalPerson %><br/>
+NacebelCode liés : <%  codes = ""
+@request.nacebel.each do |nacebel|
+    if codes != "" 
+        codes.concat(',')
+    end
+    codes.concat(nacebel.code)
+end %> <%= codes %><br/>

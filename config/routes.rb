@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Routes for request
-  get 'request/form'
-  post 'request/form', to: 'request#receive'
+  get 'request/new'
+  post 'request/new', to: 'request#receive'
+  get 'request/show'
   # Routes for Result
   get 'result/result'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

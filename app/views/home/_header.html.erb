@@ -1,19 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <%= link_to 'AssuranceApp', root_path, class:"navbar-brand" %>
-<!--     <a class="navbar-brand" href="#">AssuranceApp</a>-->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <%= link_to 'Faites votre simulation', request_form_path , class:"nav-link" %>
-<!--           <a class="nav-link" href="#">Faites votre simulation</a>-->
+            <%= link_to 'Faites votre simulation', request_new_path , class:"nav-link" %>
         </li>
         <li class="nav-item">
-            <%= link_to 'Vos propositions', result_result_path, class:"nav-link" %>
-<!--             <a class="nav-link" href="#">Vos propositions</a> -->
+            <%= link_to 'Vos propositions', request_index_path, class:"nav-link" %>
         </li>
       </ul>
     </div>

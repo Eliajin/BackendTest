@@ -8,7 +8,7 @@
 
 p 'begin'
 
-filename = 'C:\Users\abrichard\Documents\Yago_test\BackendTest\AssuranceApp\public\NACEBEL_2008.csv'
+filename = 'C:\Users\abrichard\Documents\Yago_test\BackendTest\public\NACEBEL_2008.csv'
 options = {:col_sep => ';', :force_utf8 => true} # We don t need theses options
 n = SmarterCSV.process(filename, options) do |array|
         # we're passing a block in, to process each resulting hash / =row (the block takes array of hashes)

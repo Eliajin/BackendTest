@@ -1,0 +1,11 @@
+<td><%= request.annualRevenue %></td>
+<td><%= request.enterpriseNumber %></td>
+<td><%= request.legalName %></td>
+<td><%= request.naturalPerson %></td>
+<td><%  codes = ""
+request.nacebel.each do |nacebel|
+    if codes != "" 
+        codes.concat(',')
+    end
+    codes.concat(nacebel.code)
+end %> <%= codes %> </td>
