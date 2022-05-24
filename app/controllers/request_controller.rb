@@ -1,6 +1,5 @@
 class RequestController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_user, only: [:destroy, :update, :edit]
 
   def index
     @requests = Request.all
