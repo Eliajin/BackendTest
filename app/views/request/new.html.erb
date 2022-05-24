@@ -1,23 +1,23 @@
 Merci de remplir ses informations pour pouvoir recevoir votre offre personnalis√©e d'assurance !
 <%= form_with model: @request do |form| %>
   <div class="form-group">
-    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+    <%= form.text_field :email, class:"form-control", placeholder:"Email", value: current_user.email, :readonly => true %>
   </div>
   <br/>
   <div class="form-group">
-    <%= form.text_field :phonenumber, class:"form-control", placeholder:"phonenumber" %>
+    <%= form.text_field :name, class:"form-control", placeholder:"name", value: current_user.name, :readonly => true %>
   </div>
   <br/>
   <div class="form-group">
-    <%= form.text_field :name, class:"form-control", placeholder:"name" %>
+    <%= form.text_field :surname, class:"form-control", placeholder:"surname", value: current_user.surname, :readonly => true %>
   </div>
   <br/>
   <div class="form-group">
-    <%= form.text_field :surname, class:"form-control", placeholder:"surname" %>
+    <%= form.text_field :phonenumber, class:"form-control", placeholder:"phonenumber", value: current_user.phonenumber, :readonly => true %>
   </div>
   <br/> 
   <div class="form-group">
-    <%= form.text_field :address, class:"form-control", placeholder:"address" %>
+    <%= form.text_field :address, class:"form-control", placeholder:"address", value: current_user.address, :readonly => true %>
   </div>
   <br/>
   <p>Info pour votre assurance</p>
@@ -45,6 +45,10 @@ Merci de remplir ses informations pour pouvoir recevoir votre offre personnalis√
   <!-- <%= form.check_box :naturalPerson, class:"form-control" %>-->
     <%= form.check_box :naturalPerson %>
     <%= form.label :naturalPerson, "naturalPerson" %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= form.number_field :user_id, id: :request_user_id, class:"form-control", placeholder:"User Id", value: current_user.id, type: :hidden %>
   </div>
   <br/>
   <div>

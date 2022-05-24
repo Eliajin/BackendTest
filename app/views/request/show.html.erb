@@ -1,4 +1,4 @@
-Revenue annuel : <%= @request.annualRevenue %><br/>
+Revenu annuel : <%= @request.annualRevenue %><br/>
 Numéro entreprise : <%= @request.enterpriseNumber %><br/>
 nom légal : <%= @request.legalName %><br/>
 natural person : <%= @request.naturalPerson %><br/>
@@ -9,3 +9,15 @@ NacebelCode liés : <%  codes = ""
     end
     codes.concat(nacebel.code)
 end %> <%= codes %><br/>
+<br/><br/><br/>
+<% @proposal %>
+Disponibilité : <%= @proposal["available"] %><br/>
+Coverage Ceiling : <%= @proposal["coverageCeiling"] %><br/>
+Deductibilité : <%= @proposal["deductible"] %><br/>
+QuoteId : <%= @proposal["quoteId"] %><br/>
+Premium : <br/> <!-- Est-ce que ça sera toujours "grossPremiums" ? -->
+    afterDelivery : <%= @proposal["grossPremiums"]["afterDelivery"] %><br/>
+    publicLiability : <%= @proposal["grossPremiums"]["publicLiability"] %><br/>
+    professionalIndemnity : <%= @proposal["grossPremiums"]["professionalIndemnity"] %><br/>
+    entrustedObjects : <%= @proposal["grossPremiums"]["entrustedObjects"] %><br/>
+    legalExpenses : <%= @proposal["grossPremiums"]["legalExpenses"] %><br/>
